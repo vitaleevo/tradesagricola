@@ -52,9 +52,14 @@ const Home: React.FC = () => {
               <button className="h-14 px-8 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-2 hover:-translate-y-1">
                 Conheça Nossos Serviços
               </button>
-              <button className="h-14 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/40 text-white font-bold rounded-lg transition-all flex items-center justify-center">
+              <a 
+                href="https://wa.me/244923276552" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="h-14 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/40 text-white font-bold rounded-lg transition-all flex items-center justify-center"
+              >
                 Fale Conosco
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -145,9 +150,14 @@ const Home: React.FC = () => {
             <button className="h-14 px-10 bg-[#111811] hover:bg-black text-white font-bold rounded-lg shadow-2xl transition-all hover:-translate-y-1">
               Solicitar Orçamento Gratuito
             </button>
-            <button className="h-14 px-10 bg-white/20 hover:bg-white/30 backdrop-blur-md border-2 border-white/30 text-[#111811] font-bold rounded-lg transition-all">
+            <a 
+              href="https://wa.me/244923276552" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="h-14 px-10 bg-white/20 hover:bg-white/30 backdrop-blur-md border-2 border-white/30 text-[#111811] font-bold rounded-lg transition-all flex items-center justify-center"
+            >
               Falar no WhatsApp
-            </button>
+            </a>
           </div>
         </div>
       </section>

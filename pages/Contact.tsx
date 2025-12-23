@@ -40,12 +40,13 @@ const Contact: React.FC = () => {
                <div className="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><span className="material-symbols-outlined">mail</span></div>
                <h3 className="font-bold text-lg">Email Comercial</h3>
                <p className="text-sm text-text-muted dark:text-gray-400">Para orçamentos e informações.</p>
-               <a href="mailto:comercial@tradersagricola.ao" className="text-lg font-bold text-primary hover:underline break-words">comercial@tradersagricola.ao</a>
+               <a href="mailto:comercial@tradersagricola.ao" className="text-lg font-bold text-primary hover:underline break-all">comercial@tradersagricola.ao</a>
             </div>
             <div className="bg-white dark:bg-surface-dark p-8 rounded-2xl shadow-sm border border-gray-200 dark:border-white/10 flex flex-col gap-4">
-               <div className="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><span className="material-symbols-outlined">location_on</span></div>
-               <h3 className="font-bold text-lg">Endereço</h3>
-               <p className="text-sm text-text-muted dark:text-gray-400">Rua Principal do Talatona, Edifício Traders, Luanda, Angola</p>
+               <div className="size-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center"><span className="material-symbols-outlined">language</span></div>
+               <h3 className="font-bold text-lg">Website</h3>
+               <p className="text-sm text-text-muted dark:text-gray-400">Visite nosso portal oficial.</p>
+               <a href="https://www.tradersagricola.com" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-primary hover:underline">www.tradersagricola.com</a>
             </div>
           </div>
           <div className="lg:w-2/3 h-full min-h-[500px] rounded-3xl overflow-hidden border border-gray-200 dark:border-white/10 relative shadow-inner">

@@ -15,6 +15,9 @@ const Footer: React.FC = () => {
             <p className="text-text-muted dark:text-gray-400 text-sm leading-relaxed max-w-xs">
               Transformando a paisagem e a agricultura em Angola com profissionalismo e dedicação rigorosa.
             </p>
+            <a href="https://www.tradersagricola.com" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm hover:underline">
+              www.tradersagricola.com
+            </a>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -41,18 +44,31 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex items-center gap-3 text-text-muted dark:text-gray-400">
               <span className="material-symbols-outlined text-primary text-sm">call</span>
-              <span className="text-sm">+244 923 000 000</span>
+              <a href="tel:+244923276552" className="text-sm hover:text-primary transition-colors">+244 923 276 552</a>
             </div>
             <div className="flex items-center gap-3 text-text-muted dark:text-gray-400">
               <span className="material-symbols-outlined text-primary text-sm">mail</span>
               <span className="text-sm">geral@tradersagricola.ao</span>
             </div>
             <div className="flex gap-4 mt-4">
-               {['social_leaderboard', 'photo_camera', 'work'].map((icon, idx) => (
-                 <a key={idx} href="#" className="p-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white transition-all">
-                    <span className="material-symbols-outlined text-base">{icon}</span>
-                 </a>
-               ))}
+              <a 
+                href="https://www.facebook.com/TradesAgricola" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white transition-all flex items-center justify-center"
+                title="Facebook"
+              >
+                <span className="material-symbols-outlined text-base">facebook</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/tradesagricola/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2 rounded-full bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white transition-all flex items-center justify-center"
+                title="Instagram"
+              >
+                <span className="material-symbols-outlined text-base">photo_camera</span>
+              </a>
             </div>
           </div>
         </div>
