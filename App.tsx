@@ -8,6 +8,10 @@ import About from './pages/About';
 import Services from './pages/Services';
 import B2B from './pages/B2B';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Careers from './pages/Careers';
+import News from './pages/News';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +25,10 @@ const App: React.FC = () => {
             <Route path="/servicos" element={<Services />} />
             <Route path="/b2b" element={<B2B />} />
             <Route path="/contato" element={<Contact />} />
+            <Route path="/privacidade" element={<Privacy />} />
+            <Route path="/termos" element={<Terms />} />
+            <Route path="/carreiras" element={<Careers />} />
+            <Route path="/noticias" element={<News />} />
           </Routes>
         </main>
         <Footer />

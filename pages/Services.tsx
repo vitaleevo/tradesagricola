@@ -1,44 +1,67 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+
+type Category = 'Ornamentação' | 'Infraestrutura Verde' | 'Manutenção B2B' | 'Agropecuária';
 
 const Services: React.FC = () => {
-  const products = [
-    { title: "Vasos Africanos", desc: "Design artesanal com argila local de alta durabilidade para exteriores.", img: "https://picsum.photos/seed/vase/400/300" },
-    { title: "Relva Natural", desc: "Tapetes de relva certificados, ideais para campos desportivos e parques.", img: "https://picsum.photos/seed/grass/400/300" },
-    { title: "Pedras Decorativas", desc: "Seixos brancos e gravilha vulcânica para acabamentos de paisagismo.", img: "https://picsum.photos/seed/stones/400/300" },
-    { title: "Areia Preta & Adubos", desc: "Substratos ricos em nutrientes para garantir o crescimento saudável.", img: "https://picsum.photos/seed/soil/400/300" }
-  ];
+  const [activeTab, setActiveTab] = useState<Category>('Ornamentação');
 
-  const tableData = [
-    { name: "Vasos Africanos Kamakupa", cat: "Ornamentação", app: "Decoração de entradas e halls", diff: "Argila Refratária" },
-    { name: "Relva Bermuda Tifway", cat: "Infraestrutura", app: "Campos de golfe e jardins", diff: "Resistência à seca" },
-    { name: "Chapa Isoladora PVC", cat: "Infraestrutura", app: "Proteção de raízes em lajes", diff: "Alta densidade" },
-    { name: "Fertilizante NPK 10-10-10", cat: "Agropecuária", app: "Nutrição geral de culturas", diff: "Rápida absorção" }
-  ];
+  const categories: Category[] = ['Ornamentação', 'Infraestrutura Verde', 'Manutenção B2B', 'Agropecuária'];
+
+  const products = {
+    'Ornamentação': [
+      { title: "Vasos Africanos Kamakupa", desc: "Design artesanal com argila refratária de alta durabilidade.", img: "https://picsum.photos/seed/vase1/400/300" },
+      { title: "Pedras Decorativas Brancas", desc: "Seixos selecionados para acabamentos de jardins zen e modernos.", img: "https://picsum.photos/seed/stones/400/300" },
+      { title: "Esculturas de Jardim", desc: "Peças exclusivas em pedra esculpida por artesãos locais.", img: "https://picsum.photos/seed/art/400/300" },
+      { title: "Vasos de Cimento Premium", desc: "Linha minimalista para ambientes corporativos e lofts.", img: "https://picsum.photos/seed/cement/400/300" }
+    ],
+    'Infraestrutura Verde': [
+      { title: "Relva Bermuda Tifway", desc: "Tapetes de relva certificados com alta resistência ao pisoteio.", img: "https://picsum.photos/seed/grass/400/300" },
+      { title: "Chapas Isoladoras PVC", desc: "Proteção térmica e de raízes para jardins sobre laje.", img: "https://picsum.photos/seed/pvc/400/300" },
+      { title: "Sistemas de Rega Automática", desc: "Soluções inteligentes para economia de água e eficiência.", img: "https://picsum.photos/seed/irrigation/400/300" },
+      { title: "Geotêxteis para Drenagem", desc: "Filtros de alta performance para contenção de solos.", img: "https://picsum.photos/seed/geo/400/300" }
+    ],
+    'Manutenção B2B': [
+      { title: "Gestão de Condomínios", desc: "Manutenção programada com equipas fixas e uniformizadas.", img: "https://picsum.photos/seed/condo/400/300" },
+      { title: "Poda Especializada", desc: "Corte técnico de árvores e arbustos para segurança e estética.", img: "https://picsum.photos/seed/pruning/400/300" },
+      { title: "Tratamento Fitossanitário", desc: "Controle biológico de pragas e doenças em áreas urbanas.", img: "https://picsum.photos/seed/bugs/400/300" },
+      { title: "Limpeza de Terrenos", desc: "Desmatação e limpeza de grandes lotes com remoção de resíduos.", img: "https://picsum.photos/seed/cleaning/400/300" }
+    ],
+    'Agropecuária': [
+      { title: "Adubos NPK Selecionados", desc: "Fórmulas balanceadas para o solo angolano.", img: "https://picsum.photos/seed/fertilizer/400/300" },
+      { title: "Sementes Certificadas", desc: "Milho, feijão e hortícolas de alto rendimento.", img: "https://picsum.photos/seed/seeds/400/300" },
+      { title: "Calcário Agrícola", desc: "Correção de acidez para máxima produtividade da colheita.", img: "https://picsum.photos/seed/limestone/400/300" },
+      { title: "Implementos Manuais", desc: "Ferramentas de alta resistência para o pequeno e médio produtor.", img: "https://picsum.photos/seed/tools/400/300" }
+    ]
+  };
 
   return (
     <div className="flex flex-col w-full pb-20">
       {/* Sub Hero */}
       <section className="relative w-full h-[450px] flex items-center justify-center bg-cover bg-fixed bg-center" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(https://picsum.photos/seed/ag/1600/600)` }}>
-        <div className="max-w-4xl mx-auto px-4 text-center flex flex-col gap-6">
+        <div className="max-w-4xl mx-auto px-4 text-center flex flex-col gap-6 animate-fade-in">
           <h1 className="text-white text-4xl md:text-6xl font-black">Catálogo de Soluções Técnicas</h1>
           <p className="text-gray-200 text-lg md:text-xl font-medium">Referência nacional em ornamentação, infraestrutura verde e manutenção especializada.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="bg-primary hover:bg-primary-dark text-white h-12 px-8 rounded-lg font-bold flex items-center gap-2 shadow-lg">
+            <button className="bg-primary hover:bg-primary-dark text-white h-12 px-8 rounded-lg font-bold flex items-center gap-2 shadow-lg transition-transform hover:-translate-y-1">
               <span className="material-symbols-outlined">download</span> Baixar Catálogo PDF
             </button>
-            <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white h-12 px-8 rounded-lg font-bold">
+            <button className="bg-white/20 backdrop-blur-md border border-white/30 text-white h-12 px-8 rounded-lg font-bold hover:bg-white/30 transition-all">
               Falar com Consultor
             </button>
           </div>
         </div>
       </section>
 
-      {/* Sticky Tabs (Visual) */}
-      <div className="sticky top-[64px] z-40 bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-white/10 overflow-x-auto">
+      {/* Interactive Tabs */}
+      <div className="sticky top-[64px] z-40 bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-white/10 overflow-x-auto shadow-sm">
         <div className="max-w-7xl mx-auto px-4 lg:px-10 flex min-w-max">
-          {['Ornamentação', 'Infraestrutura Verde', 'Manutenção B2B', 'Agropecuária'].map((tab, idx) => (
-            <button key={idx} className={`px-6 py-4 text-sm font-bold border-b-4 transition-all ${idx === 0 ? 'border-primary text-primary' : 'border-transparent text-text-muted hover:text-primary hover:border-primary/40'}`}>
+          {categories.map((tab) => (
+            <button 
+              key={tab} 
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-5 text-sm font-bold border-b-4 transition-all ${activeTab === tab ? 'border-primary text-primary' : 'border-transparent text-text-muted hover:text-primary'}`}
+            >
               {tab}
             </button>
           ))}
@@ -46,114 +69,57 @@ const Services: React.FC = () => {
       </div>
 
       <main className="max-w-7xl mx-auto px-4 lg:px-10 mt-16 flex flex-col gap-24">
-        {/* Product Grid */}
-        <section>
+        {/* Dynamic Product Grid */}
+        <section className="animate-fade-in" key={activeTab}>
           <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-10">
             <div>
               <span className="text-primary font-bold uppercase tracking-widest text-sm mb-1 block">Nosso Portfólio</span>
-              <h2 className="text-3xl font-black">Destaques em Ornamentação</h2>
+              <h2 className="text-3xl font-black">{activeTab}</h2>
             </div>
-            <a href="#" className="text-primary font-bold flex items-center gap-1 group">
-              Ver galeria completa <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </a>
+            <p className="text-text-muted dark:text-gray-400 text-sm max-w-xs">Mostrando soluções selecionadas para sua categoria escolhida.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((p, i) => (
-              <div key={i} className="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-xl transition-all group">
+            {products[activeTab].map((p, i) => (
+              <div key={i} className="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-xl transition-all group hover:-translate-y-1">
                 <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 relative">
-                  <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
+                  <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all"></div>
                 </div>
                 <div className="px-2 pb-2">
-                  <h3 className="font-bold text-lg mb-1">{p.title}</h3>
-                  <p className="text-xs lg:text-sm text-text-muted dark:text-gray-400">{p.desc}</p>
+                  <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">{p.title}</h3>
+                  <p className="text-xs lg:text-sm text-text-muted dark:text-gray-400 leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Technical Table */}
-        <section className="bg-white dark:bg-surface-dark rounded-3xl border border-gray-200 dark:border-white/10 shadow-sm overflow-hidden">
-          <div className="p-8 border-b border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between gap-4">
-             <div>
-               <h3 className="text-xl font-bold flex items-center gap-2">
-                 <span className="material-symbols-outlined text-primary">table_chart</span> Especificações Técnicas
-               </h3>
-               <p className="text-sm text-text-muted dark:text-gray-400 mt-1">Detalhes para projetos de infraestrutura corporativa.</p>
-             </div>
-             <button className="text-primary text-sm font-bold flex items-center gap-1 hover:bg-primary/5 px-4 rounded-lg">
-               <span className="material-symbols-outlined">download</span> XLS Completo
-             </button>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm whitespace-nowrap">
-              <thead className="bg-background-light dark:bg-background-dark/50">
-                <tr>
-                  <th className="px-8 py-5 font-bold">Produto / Material</th>
-                  <th className="px-8 py-5 font-bold">Categoria</th>
-                  <th className="px-8 py-5 font-bold">Aplicação Principal</th>
-                  <th className="px-8 py-5 font-bold">Diferencial Traders</th>
-                  <th className="px-8 py-5 font-bold text-right">Ação</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 dark:divide-white/5">
-                {tableData.map((row, i) => (
-                  <tr key={i} className="hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
-                    <td className="px-8 py-5 font-medium">{row.name}</td>
-                    <td className="px-8 py-5 text-text-muted">{row.cat}</td>
-                    <td className="px-8 py-5 text-text-muted">{row.app}</td>
-                    <td className="px-8 py-5"><span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">{row.diff}</span></td>
-                    <td className="px-8 py-5 text-right"><a href="#" className="text-primary hover:underline font-bold">Ver Ficha</a></td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        {/* Feature Highlights for Active Category */}
+        <section className="bg-primary/5 dark:bg-white/5 rounded-[40px] p-12 border border-primary/10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-6">
+               <h2 className="text-3xl font-black">Porquê escolher a Traders para <span className="text-primary">{activeTab}</span>?</h2>
+               <div className="space-y-4">
+                  {[
+                    { t: "Garantia de Qualidade", d: "Materiais certificados e testados nas condições de Angola." },
+                    { t: "Logística Própria", d: "Entregas rápidas em Luanda e províncias com frota própria." },
+                    { t: "Suporte Técnico", d: "Acompanhamento pós-venda com engenheiros agrónomos." }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-4">
+                       <span className="material-symbols-outlined text-primary fill-icon">verified</span>
+                       <div>
+                          <p className="font-bold">{item.t}</p>
+                          <p className="text-sm text-text-muted dark:text-gray-400">{item.d}</p>
+                       </div>
+                    </div>
+                  ))}
+               </div>
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl h-[300px]">
+               <img src={`https://picsum.photos/seed/${activeTab}/800/600`} alt="Service focus" className="w-full h-full object-cover" />
+            </div>
           </div>
         </section>
-
-        {/* Feature Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <section className="bg-white dark:bg-surface-dark rounded-3xl p-10 border border-gray-200 dark:border-white/10 flex flex-col justify-between">
-            <div>
-              <div className="size-14 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-8">
-                <span className="material-symbols-outlined text-3xl">handyman</span>
-              </div>
-              <h3 className="text-2xl font-black mb-4">Manutenção B2B e Contratos Públicos</h3>
-              <p className="text-text-muted dark:text-gray-400 mb-8 leading-relaxed">Gestão integral para espaços verdes corporativos. Garantimos a saúde do seu paisagismo durante todo o ano.</p>
-              <ul className="space-y-4 mb-10">
-                {['Cronograma de poda mensal', 'Controle fitossanitário', 'Reposição de plantas'].map((li, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium">
-                    <span className="material-symbols-outlined text-primary text-xl">check_circle</span> {li}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <button className="w-full h-14 rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-white font-black transition-all">Solicitar Proposta</button>
-          </section>
-
-          <section className="bg-background-dark text-white rounded-3xl p-10 border border-white/10 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-            <div className="relative z-10">
-              <div className="size-14 rounded-full bg-white/10 flex items-center justify-center text-primary mb-8">
-                <span className="material-symbols-outlined text-3xl">agriculture</span>
-              </div>
-              <h3 className="text-2xl font-black mb-4">Divisão de Agropecuária</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">Suporte completo para o produtor rural. Maximice sua colheita com insumos de alta performance.</p>
-              <div className="grid grid-cols-2 gap-4 mb-10">
-                <div className="bg-white/5 p-4 rounded-xl">
-                  <span className="text-primary font-bold block mb-1">Insumos</span>
-                  <p className="text-xs text-gray-400">Fertilizantes e sementes certificados.</p>
-                </div>
-                <div className="bg-white/5 p-4 rounded-xl">
-                  <span className="text-primary font-bold block mb-1">Consultoria</span>
-                  <p className="text-xs text-gray-400">Acompanhamento de agrônomos.</p>
-                </div>
-              </div>
-            </div>
-            <button className="relative z-10 w-full h-14 rounded-xl bg-primary hover:bg-primary-dark text-white font-black transition-all">Falar com Especialista</button>
-          </section>
-        </div>
       </main>
     </div>
   );

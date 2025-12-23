@@ -15,16 +15,16 @@ const Footer: React.FC = () => {
             <p className="text-text-muted dark:text-gray-400 text-sm leading-relaxed max-w-xs">
               Transformando a paisagem e a agricultura em Angola com profissionalismo e dedicação rigorosa.
             </p>
-            <a href="https://www.tradersagricola.com" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm hover:underline">
-              www.tradersagricola.com
+            <a href="https://tradersagricola.com" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm hover:underline">
+              tradersagricola.com
             </a>
           </div>
 
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-lg mb-2">Empresa</h4>
             <Link to="/sobre" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm">Sobre Nós</Link>
-            <a href="#" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm">Carreiras</a>
-            <a href="#" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm">Notícias</a>
+            <Link to="/carreiras" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm">Carreiras</Link>
+            <Link to="/noticias" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm">Notícias</Link>
             <Link to="/contato" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm">Contato</Link>
           </div>
 
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex items-center gap-3 text-text-muted dark:text-gray-400">
               <span className="material-symbols-outlined text-primary text-sm">mail</span>
-              <span className="text-sm">geral@tradersagricola.ao</span>
+              <a href="mailto:comercial@tradersagricola.com" className="text-sm hover:text-primary transition-colors">comercial@tradersagricola.com</a>
             </div>
             <div className="flex gap-4 mt-4">
               <a 
@@ -76,8 +76,8 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-100 dark:border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-muted dark:text-gray-500">
           <p>© 2024 Traders Agrícola. Todos os direitos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary">Privacidade</a>
-            <a href="#" className="hover:text-primary">Termos</a>
+            <Link to="/privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
+            <Link to="/termos" className="hover:text-primary transition-colors">Termos</Link>
           </div>
         </div>
       </div>
