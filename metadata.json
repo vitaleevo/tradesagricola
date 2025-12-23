@@ -1,0 +1,7 @@
+{
+  "name": "Traders Agrícola",
+  "description": "Uma aplicação web institucional e catálogo de soluções técnicas para paisagismo, agricultura e serviços B2B em Angola.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
