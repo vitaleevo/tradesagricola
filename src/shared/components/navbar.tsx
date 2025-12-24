@@ -4,12 +4,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { ThemeToggle } from './theme-toggle';
+
 export const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
     const navItems = [
         { label: 'Início', href: '/' },
+        { label: 'Nossa História', href: '/historia' },
         { label: 'Sobre Nós', href: '/sobre' },
         { label: 'Serviços e Produtos', href: '/servicos' },
         { label: 'Projetos e B2B', href: '/b2b' },
@@ -44,47 +47,56 @@ export const Navbar: React.FC = () => {
                             </Link>
                         ))}
                     </div>
-                    <a
-                        href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md shadow-primary/20 hover:scale-105"
-                    >
-                        Solicitar Proposta
-                    </a>
+
+                    <div className="flex items-center gap-4 border-l border-gray-200 dark:border-white/10 pl-8">
+                        <ThemeToggle />
+                        <a
+                            href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md shadow-primary/20 hover:scale-105"
+                        >
+                            Solicitar Proposta
+                        </a>
+                    </div>
                 </nav>
 
                 {/* Mobile menu button */}
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="lg:hidden text-text-main dark:text-white p-2"
-                >
-                    <span className="material-symbols-outlined">{isOpen ? 'close' : 'menu'}</span>
-                </button>
+                <div className="lg:hidden flex items-center gap-2">
+                    <ThemeToggle />
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="text-text-main dark:text-white p-2"
+                    >
+                        <span className="material-symbols-outlined">{isOpen ? 'close' : 'menu'}</span>
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Nav */}
             {isOpen && (
-                <div className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-white/10 p-4 shadow-xl flex flex-col gap-4">
+                <div className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-white/10 p-4 shadow-xl flex flex-col gap-2">
                     {navItems.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
                             onClick={() => setIsOpen(false)}
-                            className={`text-base font-semibold py-2 border-b border-gray-100 dark:border-white/5 ${isActive(item.href) ? 'text-primary' : 'text-text-main dark:text-gray-300'
+                            className={`text-base font-semibold py-3 px-2 rounded-lg ${isActive(item.href) ? 'bg-primary/10 text-primary' : 'text-text-main dark:text-gray-300'
                                 }`}
                         >
                             {item.label}
                         </Link>
                     ))}
-                    <a
-                        href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-primary hover:bg-primary-dark text-white w-full py-3 rounded-lg text-base font-bold transition-all text-center"
-                    >
-                        Solicitar Proposta
-                    </a>
+                    <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/5">
+                        <a
+                            href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-primary hover:bg-primary-dark text-white w-full py-4 rounded-xl text-base font-bold transition-all text-center block"
+                        >
+                            Solicitar Proposta
+                        </a>
+                    </div>
                 </div>
             )}
         </header>
