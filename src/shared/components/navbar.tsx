@@ -61,44 +61,11 @@ export const Navbar: React.FC = () => {
                     </div>
                 </nav>
 
-                {/* Mobile menu button */}
+                {/* Mobile menu button removed to use MobileNav */}
                 <div className="lg:hidden flex items-center gap-2">
                     <ThemeToggle />
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="text-text-main dark:text-white p-2"
-                    >
-                        <span className="material-symbols-outlined">{isOpen ? 'close' : 'menu'}</span>
-                    </button>
                 </div>
             </div>
-
-            {/* Mobile Nav */}
-            {isOpen && (
-                <div className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-surface-dark border-b border-gray-200 dark:border-white/10 p-4 shadow-xl flex flex-col gap-2">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className={`text-base font-semibold py-3 px-2 rounded-lg ${isActive(item.href) ? 'bg-primary/10 text-primary' : 'text-text-main dark:text-gray-300'
-                                }`}
-                        >
-                            {item.label}
-                        </Link>
-                    ))}
-                    <div className="mt-4 pt-4 border-t border-gray-100 dark:border-white/5">
-                        <a
-                            href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-primary hover:bg-primary-dark text-white w-full py-4 rounded-xl text-base font-bold transition-all text-center block"
-                        >
-                            Solicitar Proposta
-                        </a>
-                    </div>
-                </div>
-            )}
         </header>
     );
 };

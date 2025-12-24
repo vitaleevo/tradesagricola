@@ -43,6 +43,8 @@ export const metadata: Metadata = {
     },
 };
 
+import { MobileNav } from "@/shared/components/mobile-nav";
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -58,6 +60,7 @@ export default function RootLayout({
             </head>
             <body className="antialiased">
                 {children}
+                <MobileNav />
             </body>
         </html>
     );

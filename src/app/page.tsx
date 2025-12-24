@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <div className="flex flex-col min-h-screen">
             <Navbar />
-            <main className="flex-grow">
+            <main className="flex-grow pb-24 lg:pb-0">
                 <Hero />
                 <HomeServices />
                 <Values />
