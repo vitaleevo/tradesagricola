@@ -11,9 +11,9 @@ export default function B2BPage() {
     ];
 
     const projects = [
-        { title: "Condomínio Dolce Vita", location: "Talatona", img: "https://picsum.photos/seed/condo1/800/600", category: "Manutenção" },
-        { title: "Sede Banco Económico", location: "Luanda", img: "https://picsum.photos/seed/bank/800/600", category: "Paisagismo" },
-        { title: "Residencial Austin", location: "Camama", img: "https://picsum.photos/seed/resid/800/600", category: "Consultoria" }
+        { title: "Condomínio Dolce Vita", location: "Talatona", img: "/images/projects/condominio.png", category: "Manutenção" },
+        { title: "Sede Banco Económico", location: "Luanda", img: "/images/projects/banco.png", category: "Paisagismo" },
+        { title: "Residencial Austin", location: "Camama", img: "/images/projects/residencial.png", category: "Consultoria" }
     ];
 
     return (
