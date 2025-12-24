@@ -1,37 +1,38 @@
 "use client";
 
 import React, { useState } from 'react';
+import { FadeIn, StaggerContainer } from '@/shared/components/animations';
 
-type Category = 'Ornamentação' | 'Infraestrutura Verde' | 'Manutenção B2B' | 'Agropecuária';
+type Category = 'Agropecuária' | 'Insumos e Fertilizantes' | 'Pecuária e Aquicultura' | 'Comércio Alimentar';
 
 export const ServicesCatalog: React.FC = () => {
-    const [activeTab, setActiveTab] = useState<Category>('Ornamentação');
-    const categories: Category[] = ['Ornamentação', 'Infraestrutura Verde', 'Manutenção B2B', 'Agropecuária'];
+    const [activeTab, setActiveTab] = useState<Category>('Agropecuária');
+    const categories: Category[] = ['Agropecuária', 'Insumos e Fertilizantes', 'Pecuária e Aquicultura', 'Comércio Alimentar'];
 
     const products = {
-        'Ornamentação': [
-            { title: "Vasos Africanos Kamakupa", desc: "Design artesanal com argila refratária de alta durabilidade.", img: "/images/products/kamakupa.png" },
-            { title: "Pedras Decorativas Brancas", desc: "Seixos selecionados para acabamentos de jardins zen e modernos.", img: "/images/products/pedras.png" },
-            { title: "Esculturas de Jardim", desc: "Peças exclusivas em pedra esculpida por artesãos locais.", img: "/images/products/esculturas.png" },
-            { title: "Vasos de Cimento Premium", desc: "Linha minimalista para ambientes corporativos e lofts.", img: "/images/products/cimento.png" }
-        ],
-        'Infraestrutura Verde': [
-            { title: "Relva Bermuda Tifway", desc: "Tapetes de relva certificados com alta resistência ao pisoteio.", img: "https://picsum.photos/seed/grass/400/300" },
-            { title: "Chapas Isoladoras PVC", desc: "Proteção térmica e de raízes para jardins sobre laje.", img: "https://picsum.photos/seed/pvc/400/300" },
-            { title: "Sistemas de Rega Automática", desc: "Soluções inteligentes para economia de água e eficiência.", img: "https://picsum.photos/seed/irrigation/400/300" },
-            { title: "Geotêxteis para Drenagem", desc: "Filtros de alta performance para contenção de solos.", img: "https://picsum.photos/seed/geo/400/300" }
-        ],
-        'Manutenção B2B': [
-            { title: "Gestão de Condomínios", desc: "Manutenção programada com equipas fixas e uniformizadas.", img: "https://picsum.photos/seed/condo/400/300" },
-            { title: "Poda Especializada", desc: "Corte técnico de árvores e arbustos para segurança e estética.", img: "https://picsum.photos/seed/pruning/400/300" },
-            { title: "Tratamento Fitossanitário", desc: "Controle biológico de pragas e doenças em áreas urbanas.", img: "https://picsum.photos/seed/bugs/400/300" },
-            { title: "Limpeza de Terrenos", desc: "Desmatação e limpeza de grandes lotes com remoção de resíduos.", img: "https://picsum.photos/seed/cleaning/400/300" }
-        ],
         'Agropecuária': [
-            { title: "Adubos NPK Selecionados", desc: "Fórmulas balanceadas para o solo angolano.", img: "https://picsum.photos/seed/fertilizer/400/300" },
-            { title: "Sementes Certificadas", desc: "Milho, feijão e hortícolas de alto rendimento.", img: "https://picsum.photos/seed/seeds/400/300" },
-            { title: "Calcário Agrícola", desc: "Correção de acidez para máxima produtividade da colheita.", img: "https://picsum.photos/seed/limestone/400/300" },
-            { title: "Implementos Manuais", desc: "Ferramentas de alta resistência para o pequeno e médio produtor.", img: "https://picsum.photos/seed/tools/400/300" }
+            { title: "Mecanização e Preparo de Solo", desc: "Serviços técnicos de aragem e preparação de terrenos para cultivo em grande escala.", img: "/agro_hero_bg.png" },
+            { title: "Consultoria Agronómica", desc: "Apoio especializado para maximização de colheitas e gestão de culturas.", img: "/agro_seeds.png" },
+            { title: "Sistemas de Rega", desc: "Implementação de irrigação moderna para garantir produtividade o ano todo.", img: "/agro_hero_bg.png" },
+            { title: "Apicultura Técnica", desc: "Instalação e gestão de apiários para produção profissional de mel.", img: "/agro_apiculture_honey.png" }
+        ],
+        'Insumos e Fertilizantes': [
+            { title: "Fertilizantes NPK", desc: "Insumos balanceados para as necessidades específicas das terras angolanas.", img: "/agro_pesticides_fertilizers.png" },
+            { title: "Pesticidas e Herbicidas", desc: "Proteção eficaz contra pragas com produtos certificados e seguros.", img: "/agro_pesticides_fertilizers.png" },
+            { title: "Sementes Selecionadas", desc: "Variedades de milho, feijão e hortícolas de alto rendimento.", img: "/agro_seeds.png" },
+            { title: "Calcário Agrícola", desc: "Correção de pH para garantir a fertilidade e saúde do solo.", img: "/agro_pesticides_fertilizers.png" }
+        ],
+        'Pecuária e Aquicultura': [
+            { title: "Aquicultura Industrial", desc: "Sistemas fechados e abertos para criação de peixe de alta qualidade.", img: "/agro_aquaculture_fish_farming.png" },
+            { title: "Avicultura de Escala", desc: "Instalações modernas para produção de frango de corte e postura.", img: "/agro_livestock_aviculture.png" },
+            { title: "Nutrição Animal", desc: "Rações e suplementos para gado e aves com foco em produtividade.", img: "/agro_livestock_aviculture.png" },
+            { title: "Gestão Pecuária", desc: "Consultoria técnica para manejo de gado e pequenos ruminantes.", img: "/agro_hero_bg.png" }
+        ],
+        'Comércio Alimentar': [
+            { title: "Comércio Geral a Grosso", desc: "Distribuição de bens alimentares essenciais (arroz, óleo, farinha) para revenda.", img: "/agro_seeds.png" },
+            { title: "Distribuição Alimentar", desc: "Logística eficiente para abastecimento de retalho em todo o país.", img: "/agro_hero_bg.png" },
+            { title: "Produtos Derivados", desc: "Comercialização de mel, peixe e carne provenientes da nossa produção.", img: "/agro_apiculture_honey.png" },
+            { title: "Soluções Logísticas", desc: "Transporte especializado para produtos agrícolas e bens de consumo.", img: "/agro_hero_bg.png" }
         ]
     };
 
@@ -53,54 +54,58 @@ export const ServicesCatalog: React.FC = () => {
 
             <div className="max-w-7xl mx-auto px-4 lg:px-10 mt-16 flex flex-col gap-24">
                 <section key={activeTab}>
-                    <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-10">
+                    <FadeIn direction="up" className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
                         <div>
-                            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-1 block">Nosso Portfólio</span>
-                            <h2 className="text-3xl font-black">{activeTab}</h2>
+                            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-1 block">Nosso Portfolio Técnico</span>
+                            <h2 className="text-3xl lg:text-5xl font-black">{activeTab}</h2>
                         </div>
-                        <p className="text-text-muted dark:text-gray-400 text-sm max-w-xs">Mostrando soluções selecionadas para sua categoria escolhida.</p>
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <p className="text-text-muted dark:text-gray-400 text-sm max-w-sm lg:text-base leading-relaxed">Mostrando soluções especializadas para o agronegócio e comércio angolano.</p>
+                    </FadeIn>
+
+                    <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {products[activeTab].map((p, i) => (
-                            <div key={i} className="bg-white dark:bg-surface-dark p-3 rounded-2xl shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-xl transition-all group hover:-translate-y-1">
-                                <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 relative">
+                            <FadeIn key={`${activeTab}-${i}`} className="bg-white dark:bg-surface-dark p-4 rounded-[2rem] shadow-sm border border-gray-100 dark:border-white/5 hover:shadow-2xl transition-all group hover:-translate-y-2">
+                                <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 relative">
                                     <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 </div>
-                                <div className="px-2 pb-2">
-                                    <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">{p.title}</h3>
-                                    <p className="text-xs lg:text-sm text-text-muted dark:text-gray-400 leading-relaxed">{p.desc}</p>
+                                <div className="px-2 pb-4">
+                                    <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors leading-tight">{p.title}</h3>
+                                    <p className="text-sm text-text-muted dark:text-gray-400 leading-relaxed font-medium">{p.desc}</p>
                                 </div>
-                            </div>
+                            </FadeIn>
                         ))}
-                    </div>
+                    </StaggerContainer>
                 </section>
 
-                <section className="bg-primary/5 dark:bg-white/5 rounded-[40px] p-12 border border-primary/10 mb-20">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div className="flex flex-col gap-6">
-                            <h2 className="text-3xl font-black">Porquê escolher a Traders para <span className="text-primary">{activeTab}</span>?</h2>
-                            <div className="space-y-4">
+                <FadeIn className="bg-primary/5 dark:bg-white/5 rounded-[3rem] p-10 lg:p-20 border border-primary/10 mb-24 overflow-hidden relative">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -translate-y-32 translate-x-32"></div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                        <div className="flex flex-col gap-8">
+                            <h2 className="text-3xl lg:text-5xl font-black leading-tight">Excelência <span className="text-primary">Garantida</span> em Toda a Cadeia</h2>
+                            <div className="space-y-6">
                                 {[
-                                    { t: "Garantia de Qualidade", d: "Materiais certificados e testados nas condições de Angola." },
-                                    { t: "Logística Própria", d: "Entregas rápidas em Luanda e províncias com frota própria." },
-                                    { t: "Suporte Técnico", d: "Acompanhamento pós-venda com engenheiros agrónomos." }
+                                    { t: "Padrões Internacionais", d: "Insumos e processos que seguem rigorosas normas de qualidade e produtividade." },
+                                    { t: "Logística Integrada", d: "Frota própria treinada para o transporte de sementes, animais e bens sensíveis." },
+                                    { t: "Consultoria no Terreno", d: "Acompanhamento técnico para garantir que a sua produção atinja o potencial máximo." }
                                 ].map((item, idx) => (
-                                    <div key={idx} className="flex gap-4">
-                                        <span className="material-symbols-outlined text-primary fill-icon">verified</span>
+                                    <div key={idx} className="flex gap-5">
+                                        <div className="size-8 rounded-full bg-primary text-white flex items-center justify-center shrink-0">
+                                            <span className="material-symbols-outlined text-xl">check</span>
+                                        </div>
                                         <div>
-                                            <p className="font-bold">{item.t}</p>
-                                            <p className="text-sm text-text-muted dark:text-gray-400">{item.d}</p>
+                                            <p className="font-bold text-lg">{item.t}</p>
+                                            <p className="text-base text-text-muted dark:text-gray-400">{item.d}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                        <div className="rounded-3xl overflow-hidden shadow-2xl h-[300px]">
-                            <img src={`https://picsum.photos/seed/${activeTab}/800/600`} alt="Service focus" className="w-full h-full object-cover" />
+                        <div className="rounded-[2.5rem] overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
+                            <img src="/agro_hero_bg.png" alt="Service focus" className="w-full h-full object-cover" />
                         </div>
                     </div>
-                </section>
+                </FadeIn>
             </div>
         </>
     );

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     },
     description: "Especialistas em agronegócio, paisagismo e comércio de sementes em Angola. Soluções integradas para o setor primário.",
     keywords: ["agricultura", "angola", "paisagismo", "sementes", "consultoria agrícola", "traders agrícola", "vitaleevo"],
-    authors: [{ name: "vitaleevo", url: "https://vitaleevo.com" }],
+    authors: [{ name: "vitaleevo", url: "https://vitaleevo.ao" }],
     creator: "vitaleevo",
     publisher: "Traders Agrícola",
     robots: {
@@ -57,6 +57,48 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "LocalBusiness",
+                            "name": "Traders Agrícola",
+                            "image": "https://tradersagricola.com/logo.png",
+                            "@id": "https://tradersagricola.com",
+                            "url": "https://tradersagricola.com",
+                            "telephone": "+244923276552",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "Luanda",
+                                "addressLocality": "Luanda",
+                                "addressCountry": "AO"
+                            },
+                            "geo": {
+                                "@type": "GeoCoordinates",
+                                "latitude": -8.839988,
+                                "longitude": 13.289437
+                            },
+                            "openingHoursSpecification": {
+                                "@type": "OpeningHoursSpecification",
+                                "dayOfWeek": [
+                                    "Monday",
+                                    "Tuesday",
+                                    "Wednesday",
+                                    "Thursday",
+                                    "Friday"
+                                ],
+                                "opens": "08:00",
+                                "closes": "17:00"
+                            },
+                            "sameAs": [
+                                "https://www.facebook.com/tradersagricola",
+                                "https://www.instagram.com/tradersagricola"
+                            ],
+                            "description": "Especialistas em agronegócio, paisagismo e comércio de sementes em Angola."
+                        })
+                    }}
+                />
             </head>
             <body className="antialiased">
                 {children}

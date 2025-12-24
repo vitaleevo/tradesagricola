@@ -25,6 +25,8 @@ const faqs = [
     }
 ];
 
+import { FadeIn, StaggerContainer } from '@/shared/components/animations';
+
 export const HomeFAQ: React.FC = () => {
     const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -35,37 +37,38 @@ export const HomeFAQ: React.FC = () => {
     return (
         <section className="py-20 lg:py-32 px-4 lg:px-10 bg-background-light dark:bg-background-dark">
             <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-16">
+                <FadeIn className="text-center mb-16">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm mb-2 block">Dúvidas Comuns</span>
                     <h2 className="text-3xl md:text-5xl font-black mb-4">Perguntas Frequentes</h2>
                     <p className="text-text-muted dark:text-gray-400 text-lg">Encontre respostas rápidas sobre a nossa forma de trabalhar e serviços oferecidos.</p>
-                </div>
+                </FadeIn>
 
-                <div className="space-y-4">
+                <StaggerContainer className="space-y-4">
                     {faqs.map((faq, i) => (
-                        <div
-                            key={i}
-                            className="bg-white dark:bg-surface-dark rounded-2xl border border-gray-200 dark:border-white/5 overflow-hidden transition-all duration-300"
-                        >
-                            <button
-                                onClick={() => toggleFaq(i)}
-                                className="w-full p-6 flex justify-between items-center text-left hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
-                            >
-                                <span className="text-lg font-bold pr-8">{faq.question}</span>
-                                <span className={`material-symbols-outlined transition-transform duration-300 ${activeFaq === i ? 'rotate-180 text-primary' : 'text-text-muted'}`}>
-                                    expand_more
-                                </span>
-                            </button>
+                        <FadeIn key={i} delay={i * 0.05}>
                             <div
-                                className={`overflow-hidden transition-all duration-300 ease-in-out ${activeFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                                className="bg-white dark:bg-surface-dark rounded-2xl border border-gray-200 dark:border-white/5 overflow-hidden transition-all duration-300"
                             >
-                                <div className="p-6 pt-0 border-t border-gray-100 dark:border-white/5 text-text-muted dark:text-gray-300 leading-relaxed">
-                                    {faq.answer}
+                                <button
+                                    onClick={() => toggleFaq(i)}
+                                    className="w-full p-6 flex justify-between items-center text-left hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+                                >
+                                    <span className="text-lg font-bold pr-8">{faq.question}</span>
+                                    <span className={`material-symbols-outlined transition-transform duration-300 ${activeFaq === i ? 'rotate-180 text-primary' : 'text-text-muted'}`}>
+                                        expand_more
+                                    </span>
+                                </button>
+                                <div
+                                    className={`overflow-hidden transition-all duration-300 ease-in-out ${activeFaq === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                                >
+                                    <div className="p-6 pt-0 border-t border-gray-100 dark:border-white/5 text-text-muted dark:text-gray-300 leading-relaxed">
+                                        {faq.answer}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </FadeIn>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     );

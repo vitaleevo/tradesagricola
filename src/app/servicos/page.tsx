@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Serviços e Produtos | Traders Agrícola',
-    description: 'Catálogo completo de produtos e serviços especializados em paisagismo, ornamentação, infraestrutura verde e insumos agrícolas.',
+    description: 'Catálogo especializado em agropecuária, comércio de insumos (fertilizantes, pesticidas), avicultura, aquicultura, apicultura e comércio geral de bens alimentares.',
 };
 
 export default function ServicesPage() {
@@ -14,14 +14,18 @@ export default function ServicesPage() {
         <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow">
-                <section className="bg-[#152615] text-white py-20 px-4 lg:px-40 relative">
-                    <div className="max-w-7xl mx-auto flex flex-col gap-6 relative z-10">
-                        <span className="bg-primary px-3 py-1 rounded text-white text-xs font-bold uppercase tracking-widest w-fit">Soluções Completas</span>
-                        <h1 className="text-4xl lg:text-7xl font-black tracking-tight leading-tight max-w-4xl">Catálogo de Produtos e Serviços <span className="text-primary italic">Especializados</span></h1>
-                        <p className="text-gray-300 text-lg lg:text-xl max-w-2xl font-medium">Desde a base do solo à ornamentação final, fornecemos tudo o que o seu projeto precisa para prosperar no clima de Angola.</p>
+                <section className="bg-background-dark text-white py-24 px-4 lg:px-10 relative overflow-hidden flex items-center min-h-[450px]">
+                    <div className="absolute inset-0 z-0">
+                        <img src="/agro_hero_bg.png" alt="Services background" className="w-full h-full object-cover opacity-40 scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-background-dark/80 to-transparent"></div>
                     </div>
-                    <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none overflow-hidden hidden lg:block">
-                        <div className="w-[150%] h-[150%] -rotate-12 bg-primary/20 blur-[100px] rounded-full"></div>
+
+                    <div className="max-w-7xl mx-auto w-full flex flex-col gap-6 relative z-10">
+                        <span className="bg-primary px-4 py-1.5 rounded-full text-white text-xs font-bold uppercase tracking-widest w-fit mb-4 block">Soluções Corporativas</span>
+                        <h1 className="text-4xl lg:text-7xl font-black tracking-tight leading-tight max-w-4xl mb-6">Catálogo de Produtos e <span className="text-primary italic">Soluções Técnicas</span></h1>
+                        <p className="text-gray-300 text-lg lg:text-xl max-w-2xl font-medium leading-relaxed">
+                            Fornecemos desde insumos de alta tecnologia até serviços de mecanização e logística para o progresso do sector primário nacional.
+                        </p>
                     </div>
                 </section>
 

@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
                     <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4">
                         <p>© 2024 Traders Agrícola. Todos os direitos reservados.</p>
                         <span className="hidden md:block text-gray-300 dark:text-white/10">|</span>
-                        <p>Desenvolvido por <a href="https://vitaleevo.com" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">vitaleevo</a></p>
+                        <p>Desenvolvido por <a href="https://vitaleevo.ao" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">vitaleevo</a></p>
                     </div>
                     <div className="flex gap-6">
                         <Link href="/privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
