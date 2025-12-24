@@ -5,8 +5,8 @@ export const AboutIntro: React.FC = () => {
         <section className="px-4 lg:px-40 py-12 flex justify-center">
             <div className="w-full max-w-5xl flex flex-col gap-8">
                 <div className="flex items-center gap-2 text-primary">
-                    <span className="material-symbols-outlined font-bold">domain</span>
-                    <span className="text-sm font-bold uppercase tracking-wider">Quem Somos</span>
+                    <span className="material-symbols-outlined font-bold">history_edu</span>
+                    <span className="text-sm font-bold uppercase tracking-wider">Nossa História</span>
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold leading-tight max-w-4xl">
                     A Traders Agrícola – Prestação de Serviços, Lda é uma empresa angolana focada no desenvolvimento do sector primário e na valorização estética de infraestruturas.

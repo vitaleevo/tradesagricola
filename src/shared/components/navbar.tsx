@@ -44,9 +44,14 @@ export const Navbar: React.FC = () => {
                             </Link>
                         ))}
                     </div>
-                    <button className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md shadow-primary/20 hover:scale-105">
+                    <a
+                        href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all shadow-md shadow-primary/20 hover:scale-105"
+                    >
                         Solicitar Proposta
-                    </button>
+                    </a>
                 </nav>
 
                 {/* Mobile menu button */}
@@ -72,9 +77,14 @@ export const Navbar: React.FC = () => {
                             {item.label}
                         </Link>
                     ))}
-                    <button className="bg-primary hover:bg-primary-dark text-white w-full py-3 rounded-lg text-base font-bold transition-all">
+                    <a
+                        href="https://wa.me/244923276552?text=Olá,%20gostaria%20de%20solicitar%20uma%20proposta."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-primary hover:bg-primary-dark text-white w-full py-3 rounded-lg text-base font-bold transition-all text-center"
+                    >
                         Solicitar Proposta
-                    </button>
+                    </a>
                 </div>
             )}
         </header>

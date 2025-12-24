@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 export const ContactForm: React.FC = () => {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [errorMessage, setErrorMessage] = useState('');
     const [formData, setFormData] = useState({
         nome: '',
         empresa: '',
@@ -13,10 +14,39 @@ export const ContactForm: React.FC = () => {
         mensagem: ''
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setStatus('loading');
-        setTimeout(() => setStatus('success'), 1500);
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Erro ao enviar mensagem.');
+            }
+
+            setStatus('success');
+            setFormData({
+                nome: '',
+                empresa: '',
+                email: '',
+                telefone: '',
+                assunto: 'Paisagismo',
+                mensagem: ''
+            });
+        } catch (error) {
+            setStatus('error');
+            setErrorMessage(error instanceof Error ? error.message : 'Erro ao enviar mensagem.');
+        }
     };
 
     return (
@@ -32,6 +62,12 @@ export const ContactForm: React.FC = () => {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                    {status === 'error' && (
+                        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 p-4 rounded-xl flex items-center gap-3">
+                            <span className="material-symbols-outlined">error</span>
+                            <p>{errorMessage}</p>
+                        </div>
+                    )}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-bold text-text-main dark:text-gray-300">Nome Completo *</label>

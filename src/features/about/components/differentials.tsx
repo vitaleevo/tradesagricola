@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 
 export const AboutDifferentials: React.FC = () => {
     const features = [
@@ -30,9 +30,9 @@ export const AboutDifferentials: React.FC = () => {
                         <h2 className="text-4xl font-black">Nossos Diferenciais</h2>
                         <p className="text-text-muted dark:text-gray-400 text-lg">Oferecemos soluções completas e autónomas para garantir a qualidade.</p>
                     </div>
-                    <button className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-bold transition-all">
+                    <Link href="/servicos" className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-bold transition-all">
                         Ver Nossos Serviços
-                    </button>
+                    </Link>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {features.map((f, i) => (

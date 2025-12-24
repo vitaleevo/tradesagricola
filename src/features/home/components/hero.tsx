@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 
 export const Hero: React.FC = () => {
     return (
@@ -19,9 +19,9 @@ export const Hero: React.FC = () => {
                         Do fornecimento de materiais ornamentais à manutenção de grandes infraestruturas verdes.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
-                        <button className="h-14 px-8 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-2 hover:-translate-y-1">
+                        <Link href="/servicos" className="h-14 px-8 bg-primary hover:bg-primary-dark text-white font-bold rounded-lg transition-all shadow-xl shadow-primary/30 flex items-center justify-center gap-2 hover:-translate-y-1">
                             Conheça Nossos Serviços
-                        </button>
+                        </Link>
                         <a
                             href="https://wa.me/244923276552"
                             target="_blank"
