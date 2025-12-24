@@ -87,7 +87,7 @@ export default function HistoriaPage() {
                                 <h2 className="text-3xl font-black">Nossa Missão</h2>
                             </div>
                             <p className="text-text-muted dark:text-gray-400 leading-relaxed text-lg">
-                                Impulsionar o sector primário angolano através do fornecimento de insumos de alta performance, produção agropecuária sustentável e comércio eficiente de bens alimentares, contribuindo directamente para a segurança alimentar do país.
+                                Fortalecer o sector primário angolano através do fornecimento de insumos de alta performance, produção agropecuária sustentável e comércio eficiente de bens alimentares, contribuindo directamente para a segurança alimentar do país.
                             </p>
                         </FadeIn>
                         <FadeIn direction="right" className="bg-surface-dark/5 dark:bg-surface-dark/10 p-10 lg:p-16 rounded-[2.5rem] border-l-8 border-gray-400">
