@@ -5,19 +5,19 @@ const services = [
         title: "Paisagismo de Grande Escala",
         desc: "Projetos paisagísticos completos para condomínios, empresas e espaços públicos, integrando beleza natural e funcionalidade urbana.",
         icon: "park",
-        img: "https://picsum.photos/seed/park/800/600"
+        img: "/images/home/paisagismo.png"
     },
     {
         title: "Vasos Ornamentais Exclusivos",
         desc: "Uma coleção exclusiva de vasos de alta durabilidade e design sofisticado, perfeitos para interiores e exteriores de prestígio.",
         icon: "potted_plant",
-        img: "https://picsum.photos/seed/pot/800/600"
+        img: "/images/home/vasos.png"
     },
     {
         title: "Consultoria e Insumos",
         desc: "Suporte técnico especializado para maximizar colheitas e fornecimento de insumos certificados para o setor agropecuário angolano.",
         icon: "science",
-        img: "https://picsum.photos/seed/agri/800/600"
+        img: "/images/home/agronomia.png"
     }
 ];
 

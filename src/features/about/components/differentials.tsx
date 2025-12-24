@@ -4,21 +4,21 @@ export const AboutDifferentials: React.FC = () => {
     const features = [
         {
             title: "Frota Própria",
-            desc: "Garantimos o transporte de inertes (pedra, areia) com total autonomia e rapidez para sua obra, sem depender de terceiros.",
+            desc: "Garantimos o transporte terrestre e marítimo com frota própria de camiões e embarcações para logística de inertes e equipamentos, sem depender de terceiros.",
             icon: "local_shipping",
-            img: "https://picsum.photos/seed/truck/800/600"
+            img: "/images/frota.png"
         },
         {
             title: "Equipa Especializada",
             desc: "Profissionais preparados e uniformizados para a manutenção contínua e rigorosa de hotéis, condomínios e espaços públicos.",
             icon: "handyman",
-            img: "https://picsum.photos/seed/team/800/600"
+            img: "/images/equipa.png"
         },
         {
             title: "Identidade Nacional",
             desc: "Orgulhosamente uma empresa de direito angolano, comprometida com o desenvolvimento local e a valorização do nosso território.",
             icon: "flag",
-            img: "https://picsum.photos/seed/angola/800/600"
+            img: "/images/identidade.png"
         }
     ];
 
