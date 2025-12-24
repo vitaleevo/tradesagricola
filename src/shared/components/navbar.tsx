@@ -13,11 +13,10 @@ export const Navbar: React.FC = () => {
     const navItems = [
         { label: 'Início', href: '/' },
         { label: 'Nossa História', href: '/historia' },
-        { label: 'Sobre Nós', href: '/sobre' },
-        { label: 'Serviços e Produtos', href: '/servicos' },
-        { label: 'Projetos e B2B', href: '/b2b' },
+        { label: 'Serviços', href: '/servicos' },
+        { label: 'B2B & Soluções', href: '/b2b' },
         { label: 'Notícias', href: '/noticias' },
-        { label: 'Contato', href: '/contato' },
+        { label: 'Contacto', href: '/contato' },
     ];
 
     const isActive = (path: string) => pathname === path;

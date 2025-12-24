@@ -22,7 +22,7 @@ export const ContactForm: React.FC = () => {
         empresa: '',
         email: '',
         telefone: '',
-        assunto: 'Paisagismo',
+        assunto: 'Insumos e Fertilizantes',
         mensagem: '',
         website: '',
         confirmEmail: ''
@@ -54,7 +54,7 @@ export const ContactForm: React.FC = () => {
                 empresa: '',
                 email: '',
                 telefone: '',
-                assunto: 'Paisagismo',
+                assunto: 'Insumos e Fertilizantes',
                 mensagem: '',
                 website: '',
                 confirmEmail: ''
@@ -143,12 +143,12 @@ export const ContactForm: React.FC = () => {
                                     required
                                     value={formData.nome}
                                     onChange={(e) => setFormData(prev => ({ ...prev, nome: e.target.value }))}
-                                    placeholder="Ex: João Manuel"
+                                    placeholder="Ex: Manuel dos Santos"
                                     className="h-12 px-4 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:border-primary outline-none transition-all"
                                 />
                             </div>
                             <div className="flex flex-col gap-2">
-                                <label className="text-sm font-bold text-text-main dark:text-gray-300">Empresa (opcional)</label>
+                                <label className="text-sm font-bold text-text-main dark:text-gray-300">Empresa / Fazenda (opcional)</label>
                                 <input
                                     type="text"
                                     value={formData.empresa}
@@ -160,18 +160,18 @@ export const ContactForm: React.FC = () => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="flex flex-col gap-2">
-                                <label className="text-sm font-bold text-text-main dark:text-gray-300">E-mail Corporativo *</label>
+                                <label className="text-sm font-bold text-text-main dark:text-gray-300">E-mail de Contacto *</label>
                                 <input
                                     type="email"
                                     required
                                     value={formData.email}
                                     onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                                    placeholder="email@empresa.com"
+                                    placeholder="exemplo@dominio.com"
                                     className="h-12 px-4 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:border-primary outline-none transition-all"
                                 />
                             </div>
                             <div className="flex flex-col gap-2">
-                                <label className="text-sm font-bold text-text-main dark:text-gray-300">Telefone *</label>
+                                <label className="text-sm font-bold text-text-main dark:text-gray-300">Telefone / WhatsApp *</label>
                                 <input
                                     type="tel"
                                     required
@@ -183,17 +183,17 @@ export const ContactForm: React.FC = () => {
                             </div>
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label className="text-sm font-bold text-text-main dark:text-gray-300">Serviço de Interesse</label>
+                            <label className="text-sm font-bold text-text-main dark:text-gray-300">Assunto de interesse</label>
                             <select
                                 value={formData.assunto}
                                 onChange={(e) => setFormData(prev => ({ ...prev, assunto: e.target.value }))}
                                 className="h-12 px-4 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:border-primary outline-none transition-all appearance-none"
                             >
-                                <option>Paisagismo</option>
-                                <option>Insumos Agrícolas</option>
-                                <option>Manutenção B2B</option>
-                                <option>Vasos e Ornamentação</option>
-                                <option>Outros</option>
+                                <option>Insumos e Fertilizantes</option>
+                                <option>Produção Agropecuária</option>
+                                <option>Logística e Escoamento</option>
+                                <option>Parcerias Comerciais B2B</option>
+                                <option>Apoio Técnico / Outros</option>
                             </select>
                         </div>
                         <div className="flex flex-col gap-2">
@@ -203,16 +203,16 @@ export const ContactForm: React.FC = () => {
                                 rows={4}
                                 value={formData.mensagem}
                                 onChange={(e) => setFormData(prev => ({ ...prev, mensagem: e.target.value }))}
-                                placeholder="Descreva brevemente a sua necessidade..."
+                                placeholder="Descreva como podemos ajudar o seu negócio..."
                                 className="p-4 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:border-primary outline-none transition-all resize-none"
                             ></textarea>
                         </div>
                         <button
                             type="submit"
                             disabled={status === 'loading'}
-                            className="h-14 bg-primary hover:bg-primary-dark disabled:opacity-50 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2"
+                            className="h-14 bg-primary hover:bg-primary-dark disabled:opacity-50 text-white font-bold rounded-2xl transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95"
                         >
-                            {status === 'loading' ? 'Enviando...' : 'Enviar Pedido de Orçamento'}
+                            {status === 'loading' ? 'Enviando...' : 'Pedir Informações'}
                             <span className="material-symbols-outlined">send</span>
                         </button>
                     </motion.form>

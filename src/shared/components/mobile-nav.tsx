@@ -10,9 +10,9 @@ export const MobileNav: React.FC = () => {
     const items = [
         { label: 'Início', href: '/', icon: 'home' },
         { label: 'Serviços', href: '/servicos', icon: 'agriculture' },
-        { label: 'Obras', href: '/b2b', icon: 'architecture' },
+        { label: 'B2B', href: '/b2b', icon: 'business' },
         { label: 'Notícias', href: '/noticias', icon: 'newspaper' },
-        { label: 'Contato', href: '/contato', icon: 'chat' },
+        { label: 'Contacto', href: '/contato', icon: 'chat' },
     ];
 
     const isActive = (path: string) => pathname === path;
@@ -27,8 +27,8 @@ export const MobileNav: React.FC = () => {
                             key={item.href}
                             href={item.href}
                             className={`flex flex-col items-center justify-center w-14 h-14 rounded-2xl transition-all duration-300 ${active
-                                    ? 'bg-primary text-white scale-110 shadow-lg shadow-primary/30'
-                                    : 'text-text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5'
+                                ? 'bg-primary text-white scale-110 shadow-lg shadow-primary/30'
+                                : 'text-text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-white/5'
                                 }`}
                         >
                             <span className={`material-symbols-outlined text-[24px] ${active ? 'fill-icon' : ''}`}>
