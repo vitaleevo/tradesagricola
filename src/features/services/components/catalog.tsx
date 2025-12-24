@@ -10,10 +10,10 @@ export const ServicesCatalog: React.FC = () => {
 
     const products = {
         'Ornamentação': [
-            { title: "Vasos Africanos Kamakupa", desc: "Design artesanal com argila refratária de alta durabilidade.", img: "https://picsum.photos/seed/vase1/400/300" },
-            { title: "Pedras Decorativas Brancas", desc: "Seixos selecionados para acabamentos de jardins zen e modernos.", img: "https://picsum.photos/seed/stones/400/300" },
-            { title: "Esculturas de Jardim", desc: "Peças exclusivas em pedra esculpida por artesãos locais.", img: "https://picsum.photos/seed/art/400/300" },
-            { title: "Vasos de Cimento Premium", desc: "Linha minimalista para ambientes corporativos e lofts.", img: "https://picsum.photos/seed/cement/400/300" }
+            { title: "Vasos Africanos Kamakupa", desc: "Design artesanal com argila refratária de alta durabilidade.", img: "/images/products/kamakupa.png" },
+            { title: "Pedras Decorativas Brancas", desc: "Seixos selecionados para acabamentos de jardins zen e modernos.", img: "/images/products/pedras.png" },
+            { title: "Esculturas de Jardim", desc: "Peças exclusivas em pedra esculpida por artesãos locais.", img: "/images/products/esculturas.png" },
+            { title: "Vasos de Cimento Premium", desc: "Linha minimalista para ambientes corporativos e lofts.", img: "/images/products/cimento.png" }
         ],
         'Infraestrutura Verde': [
             { title: "Relva Bermuda Tifway", desc: "Tapetes de relva certificados com alta resistência ao pisoteio.", img: "https://picsum.photos/seed/grass/400/300" },
