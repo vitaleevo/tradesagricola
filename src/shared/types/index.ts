@@ -30,11 +30,13 @@ export interface ProjectReference {
 }
 
 export interface NewsArticle {
+    slug: string;
     title: string;
     excerpt: string;
     date: string;
     category: string;
     img: string;
+    content: React.ReactNode;
 }
 
 export interface JobOpening {
