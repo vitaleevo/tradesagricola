@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     },
 };
 
+import { ProductGallery } from '@/shared/components/product-gallery';
+
 export default function FornecimentosPage() {
     return (
         <div className="flex flex-col min-h-screen">
@@ -39,6 +41,13 @@ export default function FornecimentosPage() {
             <main className="flex-grow pb-24 lg:pb-0">
                 <SuppliesHero />
                 <SuppliesCatalog />
+                <div className="bg-background-light dark:bg-surface-dark border-t border-gray-100 dark:border-white/5">
+                    <ProductGallery
+                        category="reagents"
+                        title="Produtos em Destaque"
+                        subtitle="Confira os reagentes mais procurados por nossos clientes."
+                    />
+                </div>
             </main>
             <Footer />
         </div>

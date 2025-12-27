@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar } from '@/shared/components/navbar';
 import { Footer } from '@/shared/components/footer';
-import { Hero, HomeServices, Values, LabSupplies, HomeFAQ, HomeCTA } from '@/features/home';
+import { Hero, HomeServices, Values, LabSupplies, FeaturedShop, HomeFAQ, HomeCTA } from '@/features/home';
 
 export default function Home() {
     return (
@@ -12,6 +12,7 @@ export default function Home() {
                 <HomeServices />
                 <Values />
                 <LabSupplies />
+                <FeaturedShop />
                 <HomeFAQ />
                 <HomeCTA />
             </main>

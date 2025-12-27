@@ -12,6 +12,7 @@ export const Navbar: React.FC = () => {
 
     const navItems = [
         { label: 'Início', href: '/' },
+        { label: 'Produtos', href: '/produtos' },
         { label: 'Serviços', href: '/servicos' },
         { label: 'Jardinagem', href: '/jardinagem' },
         { label: 'Fornecimentos', href: '/fornecimentos' },

@@ -29,6 +29,8 @@ const labCategories = [
     }
 ];
 
+import { ProductGallery } from '@/shared/components/product-gallery';
+
 export const LabSupplies: React.FC = () => {
     return (
         <section className="py-20 lg:py-32 px-4 lg:px-10 bg-white dark:bg-background-dark relative overflow-hidden">
@@ -58,7 +60,7 @@ export const LabSupplies: React.FC = () => {
                     </Link>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                     {labCategories.map((cat, i) => (
                         <FadeIn key={i} delay={i * 0.1}>
                             <Link
@@ -108,8 +110,17 @@ export const LabSupplies: React.FC = () => {
                     ))}
                 </div>
 
+                {/* Featured Products Gallery */}
+                <div className="border-t border-gray-100 dark:border-white/5 pt-12">
+                    <ProductGallery
+                        category="reagents"
+                        title="Destaques em Reagentes"
+                        subtitle="Produtos de alta precisão disponíveis para entrega imediata."
+                    />
+                </div>
+
                 {/* Mobile CTA */}
-                <FadeIn className="mt-10 lg:hidden">
+                <FadeIn className="mt-10 lg:hidden text-center">
                     <Link
                         href="/fornecimentos"
                         className="flex items-center justify-center gap-2 w-full h-14 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-all active:scale-95 shadow-lg shadow-primary/20"

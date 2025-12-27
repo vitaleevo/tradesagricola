@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     },
 };
 
+import { ProductGallery } from '@/shared/components/product-gallery';
+
 export default function JardinagemPage() {
     return (
         <div className="flex flex-col min-h-screen">
@@ -51,6 +53,20 @@ export default function JardinagemPage() {
             <main className="flex-grow pb-24 lg:pb-0">
                 <GardeningHero />
                 <GardeningCatalog />
+                <div className="bg-background-light dark:bg-surface-dark border-t border-gray-100 dark:border-white/5">
+                    <ProductGallery
+                        category="gardening"
+                        title="Equipamentos em Destaque"
+                        subtitle="Melhores ferramentas e insumos para o seu projeto de jardinagem."
+                    />
+                </div>
+                <div className="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-white/5">
+                    <ProductGallery
+                        category="pots"
+                        title="Coleção de Vasos & Ornamentos"
+                        subtitle="Peças exclusivas para ambientação interna e externa."
+                    />
+                </div>
             </main>
             <Footer />
         </div>
