@@ -45,6 +45,7 @@ export const metadata: Metadata = {
 };
 
 import { MobileNav } from "@/shared/components/mobile-nav";
+import { JsonLd } from "@/shared/components/json-ld";
 
 export default function RootLayout({
     children,
@@ -58,52 +59,55 @@ export default function RootLayout({
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "LocalBusiness",
-                            "name": "Traders Agrícola",
-                            "image": "https://tradersagricola.com/logo.png",
-                            "@id": "https://tradersagricola.com",
-                            "url": "https://tradersagricola.com",
-                            "telephone": "+244923276552",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "Luanda",
-                                "addressLocality": "Luanda",
-                                "addressCountry": "AO"
-                            },
-                            "geo": {
-                                "@type": "GeoCoordinates",
-                                "latitude": -8.839988,
-                                "longitude": 13.289437
-                            },
-                            "openingHoursSpecification": {
-                                "@type": "OpeningHoursSpecification",
-                                "dayOfWeek": [
-                                    "Monday",
-                                    "Tuesday",
-                                    "Wednesday",
-                                    "Thursday",
-                                    "Friday"
-                                ],
-                                "opens": "08:00",
-                                "closes": "17:00"
-                            },
-                            "sameAs": [
-                                "https://www.facebook.com/tradersagricola",
-                                "https://www.instagram.com/tradersagricola"
-                            ],
-                            "description": "Especialistas em agronegócio, paisagismo e comércio de sementes em Angola."
-                        })
-                    }}
-                />
             </head>
             <body className="antialiased">
                 {children}
                 <MobileNav />
+                <JsonLd data={{
+                    "@context": "https://schema.org",
+                    "@type": "LocalBusiness",
+                    "name": "Traders Agrícola",
+                    "image": "https://tradersagricola.com/logo.png",
+                    "@id": "https://tradersagricola.com",
+                    "url": "https://tradersagricola.com",
+                    "telephone": "+244923276552",
+                    "priceRange": "$$",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Luanda",
+                        "addressLocality": "Luanda",
+                        "addressCountry": "AO"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": -8.839988,
+                        "longitude": 13.289437
+                    },
+                    "openingHoursSpecification": {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday"
+                        ],
+                        "opens": "08:00",
+                        "closes": "17:00"
+                    },
+                    "sameAs": [
+                        "https://wa.me/244923276552",
+                        "https://www.facebook.com/tradersagricola",
+                        "https://www.instagram.com/tradersagricola"
+                    ],
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+244-923-276-552",
+                        "contactType": "sales",
+                        "areaServed": "AO",
+                        "availableLanguage": ["Portuguese", "English"]
+                    }
+                }} />
             </body>
         </html>
     );

@@ -6,9 +6,26 @@ import { Footer } from '@/shared/components/footer';
 import { ServicesCatalog, SpecializedServicesNav } from '@/features/services';
 import { FadeIn } from '@/shared/components/animations';
 
+import { JsonLd } from '@/shared/components/json-ld';
+
 export default function ServicesPage() {
     return (
         <div className="flex flex-col min-h-screen">
+            <JsonLd data={{
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Soluções Agrícolas",
+                "provider": { "@type": "Organization", "name": "Traders Agrícola" },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Serviços Agrícolas",
+                    "itemListElement": [
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria Agronómica" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mecanização e Preparo de Solo" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insumos e Fertilizantes" } }
+                    ]
+                }
+            }} />
             <Navbar />
             <main className="flex-grow">
                 {/* Hero Section */}
