@@ -3,7 +3,7 @@
 import React from 'react';
 import { Navbar } from '@/shared/components/navbar';
 import { Footer } from '@/shared/components/footer';
-import { ServicesCatalog } from '@/features/services';
+import { ServicesCatalog, SpecializedServicesNav } from '@/features/services';
 import { FadeIn } from '@/shared/components/animations';
 
 export default function ServicesPage() {
@@ -36,6 +36,8 @@ export default function ServicesPage() {
                         </FadeIn>
                     </div>
                 </section>
+
+                <SpecializedServicesNav />
 
                 <ServicesCatalog />
 

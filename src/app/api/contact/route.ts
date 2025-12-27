@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { smtpConfig, createTransporter } from '@/lib/config';
 
 // Simple in-memory rate limiting
 const rateLimitMap = new Map<string, number[]>();
@@ -95,23 +96,13 @@ export async function POST(request: NextRequest) {
         const safeAssunto = escapeHtml(assunto.substring(0, 100));
         const safeMensagem = escapeHtml(mensagem);
 
-        // Create transporter - SSL/TLS Configuration
-        const isSecure = process.env.SMTP_SECURE === 'true' || parseInt(process.env.SMTP_PORT || '465') === 465;
-
-        const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: parseInt(process.env.SMTP_PORT || '465'),
-            secure: isSecure,
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASSWORD,
-            },
-        });
+        // Create transporter - SSL/TLS Configuration using centralized config
+        const transporter = createTransporter();
 
         // Email content - send to the configured contact email
         const mailOptions = {
-            from: `"Website Traders Agrícola" <${process.env.SMTP_USER}>`,
-            to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
+            from: `"Website Traders Agrícola" <${smtpConfig.from}>`,
+            to: smtpConfig.contactEmail || smtpConfig.user,
             replyTo: email,
             subject: `[Website] Nova Solicitação: ${safeAssunto}`,
             html: `

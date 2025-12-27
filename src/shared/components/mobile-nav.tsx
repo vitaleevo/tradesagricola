@@ -10,8 +10,8 @@ export const MobileNav: React.FC = () => {
     const items = [
         { label: 'Início', href: '/', icon: 'home' },
         { label: 'Serviços', href: '/servicos', icon: 'agriculture' },
-        { label: 'B2B', href: '/b2b', icon: 'business' },
-        { label: 'Notícias', href: '/noticias', icon: 'newspaper' },
+        { label: 'Jardins', href: '/jardinagem', icon: 'yard' },
+        { label: 'Lab', href: '/fornecimentos', icon: 'science' },
         { label: 'Contacto', href: '/contato', icon: 'chat' },
     ];
 

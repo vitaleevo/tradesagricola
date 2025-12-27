@@ -74,7 +74,7 @@ export const HomeServices: React.FC = () => {
                                 </div>
                                 <h3 className="text-xl font-bold">{s.title}</h3>
                                 <p className="text-text-muted dark:text-gray-400 leading-relaxed text-sm">{s.desc}</p>
-                                <a href="#" className="flex items-center gap-2 text-primary font-bold uppercase tracking-wide text-xs mt-2 group-hover:gap-3 transition-all">
+                                <a href="/servicos" className="flex items-center gap-2 text-primary font-bold uppercase tracking-wide text-xs mt-2 group-hover:gap-3 transition-all">
                                     Saiba Mais <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                 </a>
                             </div>

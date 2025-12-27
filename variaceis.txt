@@ -1,0 +1,6 @@
+SMTP_HOST=mail.tradersagricola.com
+SMTP_PORT=465
+SMTP_USER=info@tradersagricola.com
+SMTP_PASSWORD=Inf0rm@tion1342
+CONTACT_EMAIL=info@tradersagricola.com
+SMTP_SECURE=true

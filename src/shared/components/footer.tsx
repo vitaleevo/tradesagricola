@@ -35,8 +35,8 @@ export const Footer: React.FC = () => {
                         <h4 className="font-black text-sm uppercase tracking-widest text-primary mb-2">Soluções</h4>
                         <Link href="/servicos" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium">Insumos e Fertilizantes</Link>
                         <Link href="/servicos" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium">Produção Agropecuária</Link>
+                        <Link href="/fornecimentos" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium">Fornecimentos Laboratoriais</Link>
                         <Link href="/b2b" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium">Logística e B2B</Link>
-                        <Link href="/servicos" className="text-text-muted dark:text-gray-400 hover:text-primary transition-colors text-sm font-medium">Assistência Técnica</Link>
                     </div>
 
                     <div className="flex flex-col gap-5">
@@ -51,17 +51,19 @@ export const Footer: React.FC = () => {
                         </div>
                         <div className="flex items-center gap-3 text-text-muted dark:text-gray-400">
                             <span className="material-symbols-outlined text-primary text-lg shrink-0">mail</span>
-                            <a href="mailto:comercial@traders.co.ao" className="text-sm hover:text-primary transition-colors font-bold">comercial@traders.co.ao</a>
+                            <a href="mailto:comercial@tradersagricola.com" className="text-sm hover:text-primary transition-colors font-bold">comercial@tradersagricola.com</a>
                         </div>
                         <div className="flex gap-4 mt-4">
                             {[
-                                { icon: 'facebook', href: '#', label: 'Facebook' },
-                                { icon: 'photo_camera', href: '#', label: 'Instagram' },
-                                { icon: 'business', href: '#', label: 'LinkedIn' }
+                                { icon: 'chat', href: 'https://wa.me/244923276552', label: 'WhatsApp' },
+                                { icon: 'mail', href: 'mailto:comercial@tradersagricola.com', label: 'Email' },
+                                { icon: 'call', href: 'tel:+244923276552', label: 'Telefone' }
                             ].map((social, i) => (
                                 <a
                                     key={i}
                                     href={social.href}
+                                    target={social.href.startsWith('http') ? '_blank' : undefined}
+                                    rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                                     className="p-2.5 rounded-xl bg-gray-100 dark:bg-white/5 hover:bg-primary hover:text-white transition-all flex items-center justify-center shadow-sm"
                                     title={social.label}
                                 >

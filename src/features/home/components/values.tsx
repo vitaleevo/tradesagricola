@@ -26,8 +26,8 @@ export const Values: React.FC = () => {
                             "A Traders Agrícola não apenas executa obras, mas constrói legados verdes para as futuras gerações de Angola."
                         </p>
                         <div className="flex items-center gap-4">
-                            <div className="size-12 rounded-full bg-gray-300 overflow-hidden">
-                                <img src="https://picsum.photos/seed/man/100/100" alt="CEO" />
+                            <div className="size-12 rounded-full bg-gradient-to-br from-primary to-primary-dark overflow-hidden flex items-center justify-center text-white font-bold text-lg">
+                                JM
                             </div>
                             <div>
                                 <h4 className="font-bold text-text-main dark:text-white">Eng. João Manuel</h4>

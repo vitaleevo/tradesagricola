@@ -12,9 +12,10 @@ export const Navbar: React.FC = () => {
 
     const navItems = [
         { label: 'Início', href: '/' },
-        { label: 'Nossa História', href: '/historia' },
         { label: 'Serviços', href: '/servicos' },
-        { label: 'B2B & Soluções', href: '/b2b' },
+        { label: 'Jardinagem', href: '/jardinagem' },
+        { label: 'Fornecimentos', href: '/fornecimentos' },
+        { label: 'B2B', href: '/b2b' },
         { label: 'Notícias', href: '/noticias' },
         { label: 'Contacto', href: '/contato' },
     ];
